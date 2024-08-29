@@ -11,7 +11,7 @@ const Empty = ({ title, url }) => {
       </p>
       <button
         onClick={() => naviget("/")}
-        className="w-[150px] border rounded-[5px] text-[#fff] bg-slate-500 py-2 mt-3"
+        className="w-[150px] border rounded-[5px] text-[#fff] bg-black py-2 mt-3"
       >
         Home
       </button>

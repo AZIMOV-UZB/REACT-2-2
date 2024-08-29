@@ -15,34 +15,41 @@ const NewCart = ({ data }) => {
             <img
               className="w-60 h-[200px] object-contain duration-300 hover:scale-105"
               src={product.images[0]}
-              alt=""
+              alt="foto"
             />
           </div>
+          
+          
           <div className="flex flex-col gap-1">
-            <p className="text-[16px] font-[700] text-[#253D4E] text-start">
+            <p className="text-[40px] font-[700] text-[#000000] text-start">
               {product.title}
             </p>
-            <p className="text-start text-[12px] text-[#ADADAD]">
+            <p className="text-start text-[12px] text-[#000000]">
               {product.category}
             </p>
-            <p className="text-start text-[14px]  text-[#ADADAD]">
+            <p className="text-start text-[14px]  text-[#000000]">
               {product.description}
             </p>
+            <p className="text-[red] text-xl">{product.returnPolicy}</p>
+            <div className="flex flex-wrap gap-2">
+              <p className="text-xl p-2 border rounded-lg hover:bg-black hover:text-white">Width : {product.dimensions.width}</p>
+              <p className="text-xl p-2 border rounded-lg hover:bg-black hover:text-white">Heigth : {product.dimensions.height}</p>
+            </div>
+            <img className="w-20 h-20" src={product.meta.qrCode} alt="foto" />
             <p className="text-[18px] text-[#3BB77E] font-[700]">
               ${product.price}
             </p>
+            <p>{product.reviews.data}</p>
             <div className="flex gap-1 items-center mt-4">
               <button
                 disabled={product.quantity <= 1}
                 onClick={() => dispatch({ type: "DEC_CART", payload: product })}
-                className="w-[40px] h-[30px] border rounded-[5px] text-[20px] flex items-center justify-center"
-              >
-                -
-              </button>
+                className="w-[40px] h-[30px] border rounded-[5px] text-[20px] flex items-center justify-center hover:bg-black hover:text-white"
+              >- </button>
               <button className="h-[30px] w-[60px]">{product.quantity}</button>
               <button
                 onClick={() => dispatch({ type: "INC_CART", payload: product })}
-                className="w-[40px] h-[30px] border rounded-[5px] text-[20px] flex items-center justify-center"
+                className="w-[40px] h-[30px] border rounded-[5px] text-[20px] flex items-center justify-center hover:bg-black hover:text-white"
               >
                 +
               </button>
@@ -52,7 +59,7 @@ const NewCart = ({ data }) => {
         <div className="absolute top-0 right-0">
           <button
             onClick={() => dispatch({ type: "REMOVE_CART", payload: product })}
-            className="rounded-[0_7px] px-[10px] text-[16px] hover:text-[#fff] text-[#000] py-[5px] hover:bg-red-800 "
+            className="rounded-[0_7px] px-[10px] text-[16px] text-[#fff] bg-[red] py-[5px] hover:bg-black "
           >
             Delete
           </button>

@@ -31,7 +31,7 @@ const Login = () => {
   return (
     <div className="flex h-screen items-center  justify-center border">
       {contextHolder}
-      <div className=" w-[400px] border px-5 py-8 bg-slate-100 rounded-lg">
+      <div className=" w-[400px] border px-5 bg-slate-50 py-8 rounded-lg">
         <h3 className="text-center text-3xl mb-3">Login</h3>
         <p className="text-[18px] py-2"> Username : emilys</p>
         <Form
