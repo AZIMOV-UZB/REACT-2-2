@@ -29,10 +29,11 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center">
+    <div className="flex h-screen items-center  justify-center border">
       {contextHolder}
-      <div className=" w-[400px]">
+      <div className=" w-[400px] border px-5 py-8 bg-slate-100 rounded-lg">
         <h3 className="text-center text-3xl mb-3">Login</h3>
+        <p className="text-[18px] py-2"> Username : emilys</p>
         <Form
           className=""
           name="basic"
@@ -50,7 +51,7 @@ const Login = () => {
             rules={[
               {
                 required: true,
-                message: "Ism kiriting!",
+                message: "Username kiriting!",
               },
             ]}
           >
@@ -63,7 +64,7 @@ const Login = () => {
             rules={[
               {
                 required: true,
-                message: "Please input your password!",
+                message: "Password kiriting!",
               },
             ]}
           >
@@ -81,7 +82,7 @@ const Login = () => {
           </Form.Item>
         </Form>
       </div>
-    </div>
+    </div >
   );
 };
 export default Login;
