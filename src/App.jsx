@@ -9,6 +9,7 @@ import Login from "./pages/login/Login";
 import Profil from "./pages/admin/Profil";
 import User from "./pages/admin/User";
 import Admin from "./pages/admin/Admin";
+import Not from "./components/not-found/Not";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="" element={<Layout />}>
           <Route path="/" element={<Auth />}>
+         <Route path="*" element={<Not/>}/>
             <Route path="" element={<Home />} />
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/cart" element={<Cart />} />
