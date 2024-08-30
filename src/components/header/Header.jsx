@@ -6,6 +6,7 @@ import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { RiMenu2Fill } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
   const cart = useSelector((state) => state.cart);
@@ -30,33 +31,45 @@ const Header = () => {
           <div
             className={`nav__collect flex  gap-3 ${isMenuOpen ? "show" : ""}`}
           >
-            <div className="flex items-center gap-2 navbar navbar__collection">
+            <div className="flex items-center gap-3 navbar navbar__collection">
               <button
                 onClick={() => dispatch({ type: "LOGOUT", payload: cart })}
                 className="border-none outline-none text-[14px] font-[700] text-[#253D4E] "
               >
                 LOGOUT
               </button>
-                <CiHeart className="text-[24px] " />
-                <sup className=" px-2 py-3 rounded-xl text-white bg-lime-500">{wishlist.length}</sup>
                 <NavLink
                   className={
-                    "text-[16px] font-[400] text-[#fff] lg:text-[#7e7e7e] "
+                    "text-[16px] font-[400] text-[#fff] lg:text-[#000000] "
                   }
                   to={"/wishlist"}
                 >
+                  <div className="flex gap-">
+                <CiHeart className="text-[24px] " />
+                <sup className=" px-2 py-3 rounded-xl text-white bg-lime-500">{wishlist.length}</sup>
                   Wishlist
+                  </div>
                 </NavLink>
-                <IoCartOutline className="text-[24px] " />
-                <sup className=" px-2 py-3 rounded-xl text-white bg-lime-500">{cart.length}</sup>
+
                 <NavLink
                   className={
-                    "text-[16px] font-[400] text-[#fff] lg:text-[#7e7e7e] "
+                    "text-[16px] font-[400] text-[#fff] lg:text-[#040404] "
                   }
                   to={"/Cart"}
                 >
+                <div className="flex g-1">
+                <IoCartOutline className="text-[24px] " />
+                <sup className=" px-2 py-3 rounded-xl text-white bg-lime-500">{cart.length}</sup>
                   Cart
+                  </div>
                 </NavLink>
+
+                <NavLink   to={"/Admin"}>
+                <div className="flex g-1">
+                <FaUserCircle className="text-[24px] text-black "  />Account
+</div>
+                </NavLink>
+                
             </div>
           </div>
           <div onClick={toggleMenu} className="navbar__menu">
