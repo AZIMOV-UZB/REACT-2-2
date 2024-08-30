@@ -22,7 +22,7 @@ const Header = () => {
         <div className=" flex items-center     gap-[69px] justify-between mt-5">
           <Link to={"/"}>
             <img
-              className="w-[130px] h-[50px] object-contain "
+              className="w-[150px] h-[80px] object-contain "
               src={rasm}
               alt=""
             />
@@ -72,7 +72,7 @@ const Header = () => {
                 
             </div>
           </div>
-          <div onClick={toggleMenu} className="navbar__menu text-xl">
+          <div onClick={toggleMenu} className="navbar__menu text-3xl font-[700]">
           <IoMenu />
 
           </div>
