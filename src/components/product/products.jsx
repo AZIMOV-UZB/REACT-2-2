@@ -38,7 +38,7 @@ const Products = ({ data, loading }) => {
           <p>{product.rating}</p>
           </div>
           <div className="flex justify-between">
-            <p className="text-[18px] text-lime-700 font-[700]">
+            <p className="text-[18px] text-lime-600 font-[700]">
               ${product.price}
             </p>
             <Button className="text-[18px] font-[500]"
