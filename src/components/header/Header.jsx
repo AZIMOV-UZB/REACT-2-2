@@ -4,7 +4,7 @@ import rasm from '../../assets/Header.svg'
 import { useDispatch, useSelector } from "react-redux";
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
-import { RiMenu2Fill } from "react-icons/ri";
+import { IoMenu } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
@@ -40,7 +40,7 @@ const Header = () => {
               </button>
                 <NavLink
                   className={
-                    "text-[16px] font-[400] text-[#fff] lg:text-[#000000] "
+                    "text-[16px] font-[400] text-[#000] lg:text-[#000000] "
                   }
                   to={"/wishlist"}
                 >
@@ -53,7 +53,7 @@ const Header = () => {
 
                 <NavLink
                   className={
-                    "text-[16px] font-[400] text-[#fff] lg:text-[#040404] "
+                    "text-[16px] font-[400] text-[#000] lg:text-[#040404] "
                   }
                   to={"/Cart"}
                 >
@@ -72,8 +72,9 @@ const Header = () => {
                 
             </div>
           </div>
-          <div onClick={toggleMenu} className="navbar__menu">
-            <RiMenu2Fill />
+          <div onClick={toggleMenu} className="navbar__menu text-xl">
+          <IoMenu />
+
           </div>
         </div>
       </div>

@@ -1,6 +1,9 @@
 import React from "react";
 import { Card } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import { MdDelete } from "react-icons/md";
+
+
 const NewCart = ({ data }) => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -61,7 +64,8 @@ const NewCart = ({ data }) => {
             onClick={() => dispatch({ type: "REMOVE_CART", payload: product })}
             className="rounded-[0_7px] px-[10px] text-[16px] text-[#fff] bg-[red] py-[5px] hover:bg-black "
           >
-            Delete
+            <MdDelete  className="text-3xl"/>
+
           </button>
         </div>
       </Card>
